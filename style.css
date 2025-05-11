@@ -1,0 +1,205 @@
+/* 基本樣式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 更改為 flex-start 以允許滾動 */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #34495e;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.interaction-section {
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px; /* 為按鈕之間添加一些間距 */
+}
+
+/* 按鈕點擊效果 */
+.animated-button {
+    background-color: #3498db;
+    color: white;
+}
+
+.animated-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px); /* 懸停時輕微上移 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.animated-button:active {
+    background-color: #2471a3;
+    transform: translateY(1px) scale(0.98); /* 點擊時下壓並縮小 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.animated-button-alt {
+    background-color: #2ecc71;
+    color: white;
+}
+.animated-button-alt:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.animated-button-alt:active {
+    background-color: #1e8449;
+    transform: scale(0.95); /* 點擊時縮小 */
+    box-shadow: none;
+}
+
+
+/* 加載提示動畫 */
+.loader-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 使 loader 和文字居中 */
+    flex-direction: column; /* 使 loader 和文字垂直排列 */
+    min-height: 80px; /* 給予足夠空間 */
+    margin-bottom: 15px;
+}
+
+.loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #5cb85c; /* Green */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none; /* 默認隱藏 */
+    margin-bottom: 10px; /* 與文字的間距 */
+}
+
+.loader-container p {
+    display: none; /* 默認隱藏文字 */
+    font-size: 14px;
+    color: #555;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#showLoaderButton {
+    background-color: #f0ad4e;
+    color: white;
+}
+#showLoaderButton:hover {
+    background-color: #ec971f;
+}
+
+
+/* 操作反饋 */
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 項目之間的間距 */
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.favorite-button {
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* 移除內邊距以使SVG居中 */
+}
+
+.favorite-button svg {
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.favorite-button.favorited svg {
+    fill: #e74c3c;
+    transform: scale(1.2); /* 收藏時圖標放大 */
+}
+.favorite-button:hover svg{
+    stroke: #c0392b;
+}
+.favorite-button.favorited:hover svg{
+    fill: #c0392b;
+}
+
+
+#showMessageButton {
+    background-color: #5bc0de;
+    color: white;
+}
+#showMessageButton:hover {
+    background-color: #31b0d5;
+}
+
+.popup-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    visibility: hidden; /* 初始隱藏且不佔空間 */
+    position: fixed; /* 固定位置，使其浮動 */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* 確保在最上層 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.popup-message.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+}
+
+.popup-message svg {
+    stroke: #3c763d; /* 使勾勾圖標顏色與文字一致 */
+}

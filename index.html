@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微互動效果展示</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>微互動效果展示</h1>
+
+    <!-- 按鈕點擊效果 -->
+    <section class="interaction-section">
+        <h2>按鈕點擊動畫</h2>
+        <button class="animated-button" id="clickButton">點我!</button>
+        <button class="animated-button-alt" id="submitButton">提交</button>
+    </section>
+
+    <!-- 加載提示動畫 -->
+    <section class="interaction-section">
+        <h2>加載提示動畫</h2>
+        <div class="loader-container">
+            <div class="loader"></div>
+            <p>加載中...</p>
+        </div>
+        <button id="showLoaderButton">顯示加載動畫 (3秒)</button>
+    </section>
+
+    <!-- 操作反饋 -->
+    <section class="interaction-section">
+        <h2>操作反饋</h2>
+        <div class="feedback-container">
+            <!-- 收藏物件 -->
+            <div class="favorite-item">
+                <span>收藏此項目:</span>
+                <button class="favorite-button" id="favoriteButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </button>
+            </div>
+
+            <!-- 彈出消息 -->
+            <button id="showMessageButton">顯示成功消息</button>
+            <div class="popup-message" id="popupMessage">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span>操作成功！</span>
+            </div>
+        </div>
+    </section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
